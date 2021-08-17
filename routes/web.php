@@ -14,6 +14,34 @@
 use App\Http\Middleware\HelloMiddleware;
 //Route::resource('/request', 'RequestController');
 //Route::get('hello', 'HelloController@index');
+//Route::get('system','SystemController@index')
+//->name('system');
+Route::get('system',function () {
+  return view('system');})
+->name('system');
+
+
+
+Route::get('contact',function () {
+  return view('contact');})
+->name('contact');
+Route::get('profile/add','ProfileController@add')
+->name('profile.id');
+Route::post('profile/add','ProfileController@create')
+->name('profile.create');
+Route::get('profile','ProfileController@index')
+->name('profile.index');
+Route::get('profile/{id?}/','ProfileController@index')
+->name('profile.id');
+Route::get('profile/{id?}/del','ProfileController@delete')
+->name('profile.delete');
+Route::post('profile/del','ProfileController@remove')
+->name('profile.remove');
+Route::get('profile/edit','ProfileController@edit')
+->name('profile.edit');
+Route::post('profile/edit','ProfileController@update')
+->name('profile.update');
+
 Route::get('board','BoardController@index');
 Route::get('board/add','BoardController@add');
 Route::post('board/add','BoardController@create');
@@ -49,5 +77,5 @@ Route::get('/request', 'RequestController@index');
 Route::get('serch', 'SerchController@index');
 Route::get('test', 'TestController@index');
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');})
+    ->name('top');

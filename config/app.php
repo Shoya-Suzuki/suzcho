@@ -229,4 +229,5 @@ return [
 
     ],
 
+	 'mediaPATH' => env('MEDIA_PATH'),
 ];
